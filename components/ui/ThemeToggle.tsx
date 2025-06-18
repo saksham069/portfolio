@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setIsDark(theme === "dark");
-  }, [theme]);
+    setIsDark(resolvedTheme === "dark");
+  }, [resolvedTheme]);
 
   const toggleTheme = (checked: boolean) => {
     setIsDark(checked);
