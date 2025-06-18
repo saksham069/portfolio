@@ -22,19 +22,20 @@ export default function ThemeToggle() {
     <Switch.Root
       checked={isDark}
       onCheckedChange={toggleTheme}
-      className="relative flex w-15 h-8 items-center rounded-full bg-muted px-1 transition-colors cursor-pointer data-[state=checked]:bg-primary"
+      className="relative flex w-14 h-8 items-center rounded-full border border-border bg-muted px-1 transition-colors cursor-pointer data-[state=checked]:bg-primary"
     >
       <SunIcon
-        className={`w-5 h-5 absolute left-1 text-yellow-500 transition-opacity duration-200 ${
+        className={`w-5 h-5 absolute left-1 transition-opacity duration-200 ${
           isDark ? "opacity-100" : "opacity-0"
         }`}
+        style={{ color: "#d4a743", filter: "drop-shadow(0 0 2px #bfa73e66)" }}
       />
       <MoonIcon
-        className={`w-5 h-5 absolute right-1 text-black transition-opacity duration-200 ${
+        className={`w-5 h-5 absolute right-1 text-gray-800 dark:text-white transition-opacity duration-200 ${
           isDark ? "opacity-0" : "opacity-100"
         }`}
       />
-      <Switch.Thumb className="w-6 h-6 bg-background rounded-full shadow-sm transition-transform duration-300 transform data-[state=checked]:translate-x-7 translate-x-0" />
+      <Switch.Thumb className="w-6 h-6 rounded-full shadow-sm transition-transform duration-300 transform bg-background border border-border data-[state=checked]:translate-x-6" />
     </Switch.Root>
   );
 }
