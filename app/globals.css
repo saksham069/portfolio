@@ -83,3 +83,12 @@ html.light #nprogress .bar {
 html.dark #nprogress .bar {
   background-color: oklch(0.72 0.07 210);
 }
+
+/* Hide horizontal scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
