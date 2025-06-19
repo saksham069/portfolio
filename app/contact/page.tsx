@@ -21,7 +21,17 @@ const initialForm: FormState = {
 };
 
 export default function ContactPage() {
-  const [form, setForm] = useState<FormState>(initialForm);
+  const getInitialForm = (): FormState => {
+    if (typeof window === "undefined") return initialForm;
+    try {
+      const stored = localStorage.getItem(LOCAL_KEY);
+      return stored ? JSON.parse(stored) : initialForm;
+    } catch {
+      return initialForm;
+    }
+  };
+
+  const [form, setForm] = useState<FormState>(getInitialForm);
   const [errors, setErrors] = useState<FormErrors>({});
   const [snackbar, setSnackbar] = useState<{
     message: string;
