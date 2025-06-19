@@ -44,11 +44,11 @@ export default function AboutPage() {
       <motion.div {...fadeIn} className="pt-14 text-center space-y-4">
         <h1 className="text-4xl font-bold text-foreground">About Me</h1>
         <p className="max-w-2xl mx-auto text-base sm:text-lg">
-          Hey, I'm Saksham — a full-stack web & mobile developer, game dev on
-          the side, and a Master's student at NIT Kurukshetra. I'm passionate
-          about building smooth, useful, and well-designed digital experiences,
-          whether that's a complex web app, a mobile-first tool, or just a fun
-          little game.
+          Hey, I&apos;m Saksham — a full-stack web & mobile developer, game dev
+          on the side, and a Master&apos;s student at NIT Kurukshetra. I&apos;m
+          passionate about building smooth, useful, and well-designed digital
+          experiences, whether that&apos;s a complex web app, a mobile-first
+          tool, or just a fun little game.
         </p>
       </motion.div>
 
@@ -99,29 +99,29 @@ export default function AboutPage() {
       {/* Current Focus */}
       <motion.div {...fadeIn} className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">
-          What I'm Up To
+          What I&apos;m Up To
         </h2>
         <p>
           Currently focused on expanding my portfolio, improving my design
-          sensibilities, and learning more about DevOps and AI. I'm building
-          full-stack apps using the MERN stack, shipping mobile apps with
-          Flutter + Firebase, and occasionally tinkering with game engines and
-          microcontrollers.
+          sensibilities, and learning more about DevOps and AI. I&apos;m
+          building full-stack apps using the MERN stack, shipping mobile apps
+          with Flutter + Firebase, and occasionally tinkering with game engines
+          and microcontrollers.
         </p>
         <p>
-          I'm open to internship opportunities, collaborations, and freelance
-          work that challenges me to grow and contribute meaningfully.
+          I&apos;m open to internship opportunities, collaborations, and
+          freelance work that challenges me to grow and contribute meaningfully.
         </p>
       </motion.div>
 
-      {/* What It's Like to Work With Me */}
+      {/* What It&apos;s Like to Work With Me */}
       <motion.div {...fadeIn} className="space-y-4">
         <h2 className="text-xl font-semibold text-foreground">
-          What It's Like to Work With Me
+          What It&apos;s Like to Work With Me
         </h2>
         <p>
-          I'm equal parts builder and debugger — I like things to be smooth,
-          intuitive, and solid under the hood. I care a lot about user
+          I&apos;m equal parts builder and debugger — I like things to be
+          smooth, intuitive, and solid under the hood. I care a lot about user
           experience, accessibility, and keeping code clean and readable.
           Whether solo or in a team, I bring consistency, clarity, and chill
           energy.

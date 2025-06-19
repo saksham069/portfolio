@@ -10,7 +10,7 @@
 
 // button.tsx i dont think kaam ka hai ab, delete
 
-// 
+//
 
 "use client";
 
@@ -72,7 +72,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <motion.div {...fadeIn} className="flex flex-col items-center gap-6">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
-          Hey, I'm Saksham
+          Hey, I&apos;m Saksham
         </h1>
         <p className="text-muted-foreground max-w-xl text-base sm:text-lg">
           Full-stack web & mobile dev · Game dev on the side · MCA @NIT
