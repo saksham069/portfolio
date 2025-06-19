@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Snackbar from "@/components/Snackbar";
 
 type FormState = {
@@ -12,7 +12,13 @@ type FormState = {
 
 type FormErrors = Partial<Record<keyof FormState, string>>;
 
-const initialForm: FormState = { name: "", email: "", message: "" };
+const LOCAL_KEY = "contact-form-data";
+
+const initialForm: FormState = {
+  name: "",
+  email: "",
+  message: "",
+};
 
 export default function ContactPage() {
   const [form, setForm] = useState<FormState>(initialForm);
@@ -22,7 +28,17 @@ export default function ContactPage() {
     type: "success" | "error";
   } | null>(null);
 
-  // Basic validators
+  // 🧠 Load form data on mount
+  useEffect(() => {
+    const stored = localStorage.getItem(LOCAL_KEY);
+    if (stored) setForm(JSON.parse(stored));
+  }, []);
+
+  // 🧠 Save form data on change
+  useEffect(() => {
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(form));
+  }, [form]);
+
   const validateField = (name: keyof FormState, value: string) => {
     switch (name) {
       case "name":
@@ -86,16 +102,14 @@ export default function ContactPage() {
       //   body: JSON.stringify(form),
       // });
 
-      throw new Error("");
-      
-
       setSnackbar({
         message: "Thanks! Your message has been sent 😊",
         type: "success",
       });
       setForm(initialForm);
+      localStorage.removeItem(LOCAL_KEY);
       setErrors({});
-    } catch (err) {
+    } catch {
       setSnackbar({ message: "Oops! Something went wrong.", type: "error" });
     }
   };
