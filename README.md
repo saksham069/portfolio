@@ -66,3 +66,6 @@ Welcome to my personal portfolio – a modern, responsive, and performance-optim
 ├── public/            # Static assets (images, icons)
 
 ```
+## 📝 License
+
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
