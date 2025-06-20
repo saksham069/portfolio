@@ -10,7 +10,11 @@
 
 // button.tsx i dont think kaam ka hai ab, delete
 
-//
+// change colors throughout app wherever needed (contact me button, nav bar, theme colors)
+
+// rate limiting
+
+// loading from local storage in contact info wala tab, error dont occur
 
 "use client";
 
