@@ -1,6 +1,6 @@
 // stuff to be added hai abhi, docker hogya etc
+
 // icons daalne kuch ke proper
-// fdading useEffect, so its obvious its a list of projects; test out slinding list in portrait
 
 // content dummy hai jaha bhi paras hai, abhi making the structure only, content khud daalunga, later
 
@@ -10,17 +10,14 @@
 
 // button.tsx i dont think kaam ka hai ab, delete
 
-// change colors throughout app wherever needed (contact me button, nav bar, theme colors)
-
 // rate limiting
 
 // loading from local storage in contact info wala tab, error dont occur
 
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightIcon, DownloadIcon } from "@radix-ui/react-icons";
+import { DownloadIcon } from "@radix-ui/react-icons";
 import {
   SiJavascript,
   SiPython,
@@ -36,33 +33,10 @@ import {
   SiLinux,
 } from "react-icons/si";
 import { motion } from "framer-motion";
+import ProjectCard from "@/components/ProjectCard";
+import projectsData from "@/data/projects.json";
 
-const featuredProjects = [
-  {
-    title: "Insaaf",
-    description:
-      "Flutter + Firebase platform for legal forums, internships, and networking.",
-    link: "https://github.com/shah-rahul/INSAAF",
-    thumbnail: "/thumbnails/insaaf.png",
-    tech: ["Flutter", "Firebase"],
-  },
-  {
-    title: "MiniGames-Arcade",
-    description:
-      "Core Java game arcade with 5 mini-games, home and pause screens.",
-    link: "https://github.com/saksham069/MiniGames-Arcade",
-    thumbnail: "/thumbnails/minigames.png",
-    tech: ["Java"],
-  },
-  {
-    title: "Shoes Collection",
-    description:
-      "Basic Flutter e-commerce demo with Provider-based state management.",
-    link: "https://github.com/saksham069/flutter-basic-ecommerce-app",
-    thumbnail: "/thumbnails/shoes.png",
-    tech: ["Flutter", "Dart"],
-  },
-];
+const featuredProjects = projectsData.filter((project) => project.type === "main").slice(0, 3);
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -87,7 +61,7 @@ export default function HomePage() {
           <a
             href="/saksham-resume.pdf"
             download
-            className="inline-flex items-center gap-2 px-6 py-2 border border-border text-foreground rounded-md hover:bg-muted transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-2 border border-border text-foreground rounded-md ring-offset-background hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2"
           >
             <DownloadIcon />
             Download Résumé
@@ -95,10 +69,11 @@ export default function HomePage() {
 
           <Link
             href="/contact"
-            className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+            className="px-6 py-2 bg-primary text-primary-foreground rounded-md ring-offset-background hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2"
           >
             Contact Me
           </Link>
+
         </div>
       </motion.div>
 
@@ -186,60 +161,64 @@ export default function HomePage() {
       <hr className="w-full border-border" />
 
       {/* Projects Section */}
-      <motion.section {...fadeIn} className="w-full text-left">
-        <h2 className="text-xl font-semibold mb-6 text-center text-foreground">
-          Featured Projects
-        </h2>
-
-        <div className="flex gap-4 overflow-x-auto pb-1 hide-scrollbar -mx-2 px-2 snap-x scroll-smooth">
-          {featuredProjects.map((project) => (
-            <div
-              key={project.title}
-              className="min-w-[280px] sm:min-w-[300px] md:min-w-[320px] bg-muted p-4 rounded-lg border border-border shadow-sm flex-shrink-0 snap-center"
-            >
-              <Image
-                src={project.thumbnail}
-                alt={`${project.title} thumbnail`}
-                width={400}
-                height={200}
-                className="rounded mb-3 border"
-              />
-              <h3 className="text-lg font-semibold text-foreground mb-1">
-                {project.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 text-xs">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 border border-border rounded-md bg-background text-muted-foreground"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-sm font-medium text-primary hover:underline"
-              >
-                View on GitHub →
-              </a>
+      <motion.section
+        {...fadeIn}
+        className="w-full text-left"
+      >
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <h2 className="text-xl font-semibold text-foreground">
+            Featured Projects
+          </h2>
+          <div className="invisible sm:visible relative group inline-block">
+            <div className="w-5 h-5 rounded-full border border-muted-foreground text-primary italic flex items-center justify-center text-sm font-semibold cursor-default">
+              i
             </div>
-          ))}
+            <div className="absolute z-20 bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-[200px] px-3 py-2 text-xs text-foreground bg-background border border-border rounded-md opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md">
+              Click on any card and use arrow keys to scroll.
+            </div>
+          </div>
+        </div>
 
-          {/* View All Projects Button */}
-          <Link
-            href="/projects"
-            className="flex items-center justify-center min-w-[60px] sm:min-w-[80px] md:min-w-[100px] rounded-lg border border-border bg-muted/40 text-primary hover:opacity-100 opacity-50 transition-opacity"
+        <div className="relative">
+          {/* Left Fade */}
+          <div className="pointer-events-none absolute -left-16 top-0 h-full w-32 z-10 bg-gradient-to-r from-background via-background to-transparent" />
+
+          {/* Right Fade */}
+          <div className="pointer-events-none absolute -right-16 top-0 h-full w-40 z-10 bg-gradient-to-l from-background via-background to-transparent" />
+
+
+          {/* Scrollable Container */}
+          <div
+            className="flex gap-4 overflow-x-auto px-2 -mx-2 pb-1 scroll-smooth snap-x snap-mandatory hide-scrollbar"
+            role="region"
+            aria-label="Featured Projects"
+            tabIndex={0}
           >
-            <ArrowRightIcon className="w-6 h-6" />
-          </Link>
+            {featuredProjects.map((project) => (
+              <div
+                key={project.title}
+                className="w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 snap-center"
+              >
+                <ProjectCard {...project} />
+              </div>
+            ))}
+
+            {/* View All Projects Button */}
+            <Link
+              href="/projects"
+              className="group w-[260px] sm:w-[280px] md:w-[300px] flex flex-col items-center justify-center gap-2 flex-shrink-0 rounded-lg border border-border bg-muted/40 hover:bg-muted transition-colors snap-center text-muted-foreground hover:text-foreground"
+            >
+              <div className="text-lg font-medium transition-transform group-hover:translate-x-1">
+                View All Projects →
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Browse all work
+              </div>
+            </Link>
+          </div>
         </div>
       </motion.section>
+
     </section>
   );
 }

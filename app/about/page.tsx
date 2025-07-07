@@ -26,7 +26,7 @@ export default function AboutPage() {
         className="relative w-full h-56 rounded-lg overflow-hidden bg-muted shadow-md"
       >
         <Image
-          src="/cover.jpg" // replace
+          src="/placeholder.png" // replace
           alt="Cover"
           fill
           className="object-cover"

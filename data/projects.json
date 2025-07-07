@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Insaaf",
+    "description": "Flutter + Firebase platform for legal forums, internships, and networking.",
+    "tech": ["Flutter", "Firebase"],
+    "thumbnail": "/placeholder.png",
+    "link": "https://github.com/shah-rahul/INSAAF",
+    "type": "main"
+  },
+  {
+    "title": "MiniGames-Arcade",
+    "description": "Core Java game arcade with 5 mini-games, home and pause screens.",
+    "tech": ["Java"],
+    "thumbnail": "/placeholder.png",
+    "link": "https://github.com/saksham069/MiniGames-Arcade",
+    "type": "main"
+  },
+  {
+    "title": "Shoes Collection",
+    "description": "Basic Flutter e-commerce demo with Provider-based state management.",
+    "tech": ["Flutter", "Dart"],
+    "thumbnail": "/placeholder.png",
+    "link": "https://github.com/saksham069/flutter-basic-ecommerce-app",
+    "type": "main"
+  },
+  {
+    "title": "blah blah",
+    "description": "Basic Flutter e-commerce demo with Provider-based state management.",
+    "tech": ["Flutter", "Dart"],
+    "thumbnail": "/placeholder.png",
+    "link": "https://github.com/saksham069/flutter-basic-ecommerce-app",
+    "type": "main"
+  },
+  {
+    "title": "Skribbl.io Clone",
+    "description": "A real-time multiplayer drawing game using WebSockets.",
+    "tech": ["Socket.io", "JavaScript", "Node.js"],
+    "thumbnail": "/placeholder.png",
+    "link": "https://github.com/saksham069/skribbl.io-clone",
+    "type": "exp"
+  },
+  {
+    "title": "Tic Tac Toe - Sockets",
+    "description": "Multiplayer Tic Tac Toe using sockets, express and vanilla JS.",
+    "tech": ["JavaScript", "Socket.io"],
+    "thumbnail": "/placeholder.png",
+    "link": "https://github.com/saksham069/tic-tac-toe-sockets.io",
+    "type": "exp"
+  },
+  {
+    "title": "To-Do App",
+    "description": "Simple full-stack task management app.",
+    "tech": ["MERN", "React", "Node.js"],
+    "thumbnail": "/placeholder.png",
+    "link": "https://github.com/saksham069/to-do-app",
+    "type": "exp"
+  }
+]
