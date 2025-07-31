@@ -1,21 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import type { Project } from "@/types/project";
 
-type ProjectProps = {
-  title: string;
-  description: string;
-  tech: string[];
-  thumbnail: string;
-  link: string;
-};
+type ProjectProps = Project;
 
 export default function ProjectCard({
   title,
   description,
-  tech,
+  tags,
   thumbnail,
-  link,
+  links,
 }: ProjectProps) {
   return (
     <div className="bg-muted p-4 rounded-lg border border-border shadow-sm flex flex-col justify-between">
@@ -30,7 +25,7 @@ export default function ProjectCard({
       <p className="text-sm text-muted-foreground mb-3">{description}</p>
 
       <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-        {tech.map((t) => (
+        {tags.map((t) => (
           <span
             key={t}
             className="px-2 py-1 border border-border rounded-md bg-background"
@@ -40,14 +35,22 @@ export default function ProjectCard({
         ))}
       </div>
 
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 inline-block text-sm font-medium text-primary hover:underline"
-      >
-        View on GitHub →
-      </a>
+      <div className="flex flex-col flex-wrap gap-2 text-sm text-muted-foreground mt-4">
+        {links && Object.keys(links).map((l) => (
+          <span key={l}>
+            {"🔗 ["}
+            <a
+              href={links[l]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2 py-1 text-primary hover:underline transition-all"
+            >
+              {`${l} →`}
+            </a>
+            {"]"}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

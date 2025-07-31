@@ -18,7 +18,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Saksham Arora | Portfolio",
-  description: "My professional portfolio site",
+  description: "My personal portfolio site",
+  icons: {
+    icon: '/portfolio.png',
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/portfolio.png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

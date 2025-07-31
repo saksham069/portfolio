@@ -5,31 +5,29 @@ import ProjectCard from "@/components/ProjectCard";
 import { motion } from "framer-motion";
 import { FiSearch } from "react-icons/fi";
 import projectsData from "@/data/projects.json";
-
-interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  thumbnail: string;
-  link: string;
-  type: string;
-}
+import type { Project } from "@/types/project";
 
 export default function ProjectsPage() {
   const [query, setQuery] = useState("");
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [projectsm, setProjectsm] = useState<Project[]>([]);
+  const [projectsa, setProjectsa] = useState<Project[]>([]);
+  const [projectse, setProjectse] = useState<Project[]>([]);
 
   useEffect(() => {
-    setProjects(projectsData);
+    setProjectsm(projectsData["main"]);
+    setProjectsa(projectsData["academic"]);
+    setProjectse(projectsData["experimental"]);
   }, []);
 
   const filterProjects = (type: string) => {
-    return projects
-      .filter((project) => project.type === type)
-      .filter((project) => {
-        const content = `${project.title} ${project.description} ${project.tech.join(" ")}`.toLowerCase();
-        return content.includes(query.toLowerCase());
-      });
+    let projects;
+    if (type === "main") projects = projectsm;
+    if (type === "academic") projects = projectsa;
+    if (type === "experimental") projects = projectse;
+    return projects?.filter((project) => {
+      const content = `${project.title} ${project.description} ${project.tags.join(" ")}`.toLowerCase();
+      return content.includes(query.toLowerCase());
+    });
   };
 
   return (
@@ -42,9 +40,8 @@ export default function ProjectsPage() {
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-4xl font-bold text-foreground mb-2">Projects</h1>
-        <p className="text-muted-foreground max-w-xl">
-          A selection of apps, games, tools and experiments I&apos;ve built. Most are
-          solo projects — from fun ideas to full-stack systems.
+        <p className="text-muted-foreground max-w-2xl">
+          A selection of apps, games, tools and experiments I&apos;ve built. Most are solo projects.<br />From fun ideas to full-stack well-architechtured systems...
         </p>
       </div>
 
@@ -62,7 +59,7 @@ export default function ProjectsPage() {
 
       {/* Main Project Grid */}
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mb-20">
-        {filterProjects("main").map((project, idx) => (
+        {filterProjects("main")?.map((project, idx) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 8 }}
@@ -75,32 +72,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Divider */}
-      {filterProjects("exp").length > 0 && (
-        <div className="flex items-center gap-4 mb-8">
-          <hr className="flex-grow border-border" />
-          <span className="text-sm uppercase text-muted-foreground tracking-wider">
-            Experiments
-          </span>
-          <hr className="flex-grow border-border" />
-        </div>
-      )}
-
-      {/* Experimental Projects */}
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mb-20">
-        {filterProjects("exp").map((project, idx) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.05 }}
-          >
-            <ProjectCard {...project} />
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Divider */}
-      {filterProjects("acad").length > 0 && (
+      {filterProjects("academic")!.length > 0 && (
         <div className="flex items-center gap-4 mb-8">
           <hr className="flex-grow border-border" />
           <span className="text-sm uppercase text-muted-foreground tracking-wider">
@@ -112,7 +84,32 @@ export default function ProjectsPage() {
 
       {/* Academic Projects */}
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mb-20">
-        {filterProjects("acad").map((project, idx) => (
+        {filterProjects("academic")?.map((project, idx) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.05 }}
+          >
+            <ProjectCard {...project} />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Divider */}
+      {filterProjects("experimental")!.length > 0 && (
+        <div className="flex items-center gap-4 mb-8">
+          <hr className="flex-grow border-border" />
+          <span className="text-sm uppercase text-muted-foreground tracking-wider">
+            Experiments
+          </span>
+          <hr className="flex-grow border-border" />
+        </div>
+      )}
+
+      {/* Experimental Projects */}
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mb-20">
+        {filterProjects("experimental")?.map((project, idx) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 8 }}

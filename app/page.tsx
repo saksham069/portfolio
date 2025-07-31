@@ -1,16 +1,8 @@
-// stuff to be added hai abhi, docker hogya etc
-
-// icons daalne kuch ke proper
-
-// content dummy hai jaha bhi paras hai, abhi making the structure only, content khud daalunga, later
-
 // seo krna
 
 // ssr samajhna isska
 
 // button.tsx i dont think kaam ka hai ab, delete
-
-// rate limiting
 
 // loading from local storage in contact info wala tab, error dont occur
 
@@ -31,12 +23,19 @@ import {
   SiUnity,
   SiGit,
   SiLinux,
+  SiNumpy,
+  SiTailwindcss,
+  SiGnubash,
+  SiNodedotjs,
+  SiIntellijidea,
+  SiDocker,
+  SiV
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import projectsData from "@/data/projects.json";
 
-const featuredProjects = projectsData.filter((project) => project.type === "main").slice(0, 3);
+const featuredProjects = projectsData["main"].slice(0, 3);
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -53,15 +52,14 @@ export default function HomePage() {
           Hey, I&apos;m Saksham
         </h1>
         <p className="text-muted-foreground max-w-xl text-base sm:text-lg">
-          Full-stack web & mobile dev · Game dev on the side · MCA @NIT
-          Kurukshetra
+          Full-stack Web & Mobile Dev · AI/ML Explorer · Systems & Infra Enthusiast · Game Dev on the Side · MCA @ NIT Kurukshetra
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           <a
             href="/saksham-resume.pdf"
             download
-            className="inline-flex items-center gap-2 px-6 py-2 border border-border text-foreground rounded-md ring-offset-background hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2"
+            className="inline-flex items-center gap-2 px-6 py-2 border border-border text-foreground rounded-md ring-offset-background hover:ring-2 hover:ring-ring hover:ring-offset-0"
           >
             <DownloadIcon />
             Download Résumé
@@ -69,7 +67,7 @@ export default function HomePage() {
 
           <Link
             href="/contact"
-            className="px-6 py-2 bg-primary text-primary-foreground rounded-md ring-offset-background hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2"
+            className="px-6 py-2 bg-primary text-primary-foreground rounded-md ring-offset-background hover:ring-2 hover:ring-ring hover:ring-offset-0"
           >
             Contact Me
           </Link>
@@ -86,74 +84,62 @@ export default function HomePage() {
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-sm text-muted-foreground">
           <div>
-            <h3 className="text-foreground font-semibold mb-2 flex items-center gap-2">
+            <h3 className="text-foreground font-semibold mb-2 flex items-center gap-2 underline underline-offset-4">
               Languages
             </h3>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <SiJavascript /> JavaScript / TypeScript
-              </li>
-              <li className="flex items-center gap-2">
-                <SiPython /> Python
-              </li>
-              <li className="flex items-center gap-2">
-                <SiCplusplus /> C / C++
-              </li>
-              <li className="flex items-center gap-2">Java</li>
-              <li className="flex items-center gap-2">
-                <SiDart /> Dart
-              </li>
+              <li className="flex items-center gap-2"><SiJavascript /> JavaScript / TypeScript</li>
+              <li className="flex items-center gap-2"><SiPython /> Python</li>
+              <li className="flex items-center gap-2"><SiCplusplus /> C / C++</li>
+              <li className="flex items-center gap-2"><SiIntellijidea /> Java</li>
+              <li className="flex items-center gap-2"><SiDart /> Dart</li>
+              <li className="flex items-center gap-2"><SiGnubash /> Bash / Shell</li>
             </ul>
+
           </div>
           <div>
-            <h3 className="text-foreground font-semibold mb-2 flex items-center gap-2">
+            <h3 className="text-foreground font-semibold mb-2 flex items-center gap-2 underline underline-offset-4">
               Frameworks & Libraries
             </h3>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <SiReact /> React / Next.js
-              </li>
-              <li className="flex items-center gap-2">
-                <SiExpress /> Express.js
-              </li>
-              <li className="flex items-center gap-2">
-                <SiFlutter /> Flutter
-              </li>
-              <li className="flex items-center gap-2">
-                <SiUnity /> Unity (C#)
-              </li>
+              <li className="flex items-center gap-2"><SiReact /> React / Next.js</li>
+              <li className="flex items-center gap-2"><SiNodedotjs /> Node.js</li>
+              <li className="flex items-center gap-2"><SiExpress /> Express.js</li>
+              <li className="flex items-center gap-2"><SiFlutter /> Flutter</li>
+              <li className="flex items-center gap-2"><SiUnity /> Unity (C#)</li>
+              <li className="flex items-center gap-2"><SiNumpy /> NumPy, pandas</li>
+              <li className="flex items-center gap-2"><SiTailwindcss /> Tailwind CSS</li>
             </ul>
+
           </div>
           <div>
-            <h3 className="text-foreground font-semibold mb-2 flex items-center gap-2">
+            <h3 className="text-foreground font-semibold mb-2 flex items-center gap-2 underline underline-offset-4">
               Tools & Platforms
             </h3>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <SiGit /> Git & GitHub
-              </li>
-              <li className="flex items-center gap-2">
-                <SiFirebase /> Firebase
-              </li>
-              <li className="flex items-center gap-2">
-                <SiMongodb /> MongoDB
-              </li>
-              <li className="flex items-center gap-2">VS Code</li>
-              <li className="flex items-center gap-2">
-                <SiLinux /> Linux / WSL
-              </li>
+              <li className="flex items-center gap-2"><SiGit /> Git & GitHub</li>
+              <li className="flex items-center gap-2"><SiFirebase /> Firebase</li>
+              <li className="flex items-center gap-2"><SiMongodb /> MongoDB</li>
+              <li className="flex items-center gap-2"><SiDocker /> Docker / LXD</li>
+              <li className="flex items-center gap-2"><SiV /> VS Code</li>
+              <li className="flex items-center gap-2"><SiLinux /> Linux / WSL</li>
             </ul>
+
           </div>
           <div>
-            <h3 className="text-foreground font-semibold mb-2">
+            <h3 className="text-foreground font-semibold mb-2 underline underline-offset-4">
               Dev Experience
             </h3>
             <ul className="space-y-2 pl-1">
               <li>Full-stack Web Dev</li>
               <li>Mobile App Dev</li>
               <li>Game Dev</li>
-              <li>REST APIs</li>
+              <li>AI/ML Explorations</li>
+              <li>REST API Development</li>
+              <li>Infra / Containerization (Docker, LXD)</li>
+              <li>Basic DevOps & CI/CD (Exploring)</li>
             </ul>
+
           </div>
         </div>
       </motion.section>
@@ -181,7 +167,7 @@ export default function HomePage() {
 
         <div className="relative">
           {/* Left Fade */}
-          <div className="pointer-events-none absolute -left-16 top-0 h-full w-32 z-10 bg-gradient-to-r from-background via-background to-transparent" />
+          <div className="pointer-events-none absolute -left-16 top-0 h-full w-28 z-10 bg-gradient-to-r from-background via-background to-transparent" />
 
           {/* Right Fade */}
           <div className="pointer-events-none absolute -right-16 top-0 h-full w-40 z-10 bg-gradient-to-l from-background via-background to-transparent" />
@@ -208,7 +194,7 @@ export default function HomePage() {
               href="/projects"
               className="group w-[260px] sm:w-[280px] md:w-[300px] flex flex-col items-center justify-center gap-2 flex-shrink-0 rounded-lg border border-border bg-muted/40 hover:bg-muted transition-colors snap-center text-muted-foreground hover:text-foreground"
             >
-              <div className="text-lg font-medium transition-transform group-hover:translate-x-1">
+              <div className="text-primary text-lg font-medium transition-transform group-hover:translate-x-1">
                 View All Projects →
               </div>
               <div className="text-sm text-muted-foreground">
