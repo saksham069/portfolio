@@ -1,0 +1,137 @@
+{
+  "main": [
+    {
+      "title": "Voidsh",
+      "description": "A minimalist, distraction-free shell interface designed as a productivity-first terminal with an embedded offline-first LLM that has kernel-level access.",
+      "thumbnail": "/voidsh.png",
+      "tags": ["Shell", "CLI", "Productivity", "UX", "Kernel", "LLM"],
+      "links": { "Github": "https://github.com/saksham069/voidsh" }
+    },
+    {
+      "title": "Webwatch-AI",
+      "description": "Monitors webpages for content changes in real-time using AI context detection and alerts users intelligently. ~ Stay informed without staying online",
+      "thumbnail": "/webwatch-ai.png",
+      "tags": [
+        "ML",
+        "Web Scraping",
+        "Automation",
+        "Next.js",
+        "Python",
+        "Fast-API"
+      ],
+      "links": {
+        "Github-backend": "https://github.com/saksham069/webwatch-ai-backend",
+        "Github-ml-microservice": "https://github.com/saksham069/webwatch-ai-ml-service"
+      }
+    },
+    {
+      "title": "SmartTube",
+      "description": "Custom YouTube clone with smart categorization, user-curated playlists, and a minimal UI.",
+      "thumbnail": "/smarttube.png",
+      "tags": [
+        "Frontend",
+        "Media",
+        "React",
+        "Broswer Extension",
+        "YouTube API"
+      ],
+      "links": { "Github": "https://github.com/saksham069/smartTube" }
+    },
+    {
+      "title": "Virtual Labs (LMS)",
+      "description": "LMS that combines utilities of Google Classroom and Repl.it, letting students to run language-specific code in Docker containers, with RBAC for HODs, faculty and students.",
+      "thumbnail": "/virtual-labs.png",
+      "tags": ["LMS", "Docker", "RBAC", "Next.js", "Node.js", "MongoDB"],
+      "links": { "Live": "https://virtual-lab-project.netlify.app/" }
+    },
+    {
+      "title": "Portfolio",
+      "description": "Personal portfolio website.",
+      "thumbnail": "/portfolio.png",
+      "tags": ["Next.js"],
+      "links": {
+        "Github": "https://github.com/saksham069/portfolio"
+      }
+    },
+    {
+      "title": "Insaaf",
+      "description": "A legal case workflow management system streamlining judicial processes and improving transparency.",
+      "thumbnail": "/insaaf.png",
+      "tags": ["Full Stack", "Flutter", "Firebase", "Social Media"],
+      "links": {
+        "Drive": "https://drive.google.com/drive/folders/1t3_4TzrCeHYXxh_wiUGA0BQItMYnKk4x"
+      }
+    },
+    {
+      "title": "LXD Project",
+      "description": "A local LXD-based compute cluster powered by multiple i7 PCs, designed for simulating scalable system architectures. Includes a planned frontend interface to submit and manage distributed jobs via LXD APIs.",
+      "thumbnail": "/coming-soon.jpg",
+      "tags": [
+        "DevOps",
+        "Distributed Systems",
+        "LXD",
+        "System Design",
+        "Next.js"
+      ]
+    }
+  ],
+
+  "academic": [
+    {
+      "title": "Student Mental Health Analysis",
+      "description": "A data analysis project studying mental health trends in students, with clustering and visualization techniques.",
+      "thumbnail": "/mental-health.png",
+      "tags": [
+        "Data Analytics",
+        "Pandas",
+        "Seaborn/Matplotlib",
+        "ML",
+        "Python"
+      ],
+      "links": {
+        "Report": "https://drive.google.com/file/d/1uHh5H4AHnkSjUEMB3p2IZCalJALAeEuH/view?usp=sharing"
+      }
+    },
+    {
+      "title": "Minigames Arcade",
+      "description": "An arcade designed to seamlessly integrate games. Collection of classic games (Snake, Pong, etc.) built with Java Swing/AWT to demonstrate OOP and UI skills.",
+      "thumbnail": "/minigames-arcade.png",
+      "tags": ["Java", "OOP", "Swing", "Java-AWT"],
+      "links": { "Github": "https://github.com/saksham069/MiniGames-Arcade" }
+    },
+    {
+      "title": "AI Flappy Learner",
+      "description": "A simple RL agent that learns to play Flappy Bird in real-time with a visual game interface.",
+      "thumbnail": "/ai-flappy-bird.png",
+      "tags": ["AI", "Reinforcement Learning", "Python", "Game Dev"]
+    }
+  ],
+
+  "experimental": [
+    {
+      "title": "Weather App (Flutter)",
+      "description": "Cross-platform weather forecast app using REST API, built with Flutter and modern UI practices.",
+      "thumbnail": "/weather.png",
+      "tags": ["Flutter", "API", "Mobile Dev", "Frontend"],
+      "links": { "Github": "https://github.com/saksham069/flutter-weather-app" }
+    },
+    {
+      "title": "Shoe Store E-Commerce (Flutter)",
+      "description": "Experimental mobile storefront with product listing, cart functionality, and smooth UI/UX in Flutter.",
+      "thumbnail": "/ecommerce-flutter.png",
+      "tags": ["Flutter", "E-Commerce", "Mobile Dev"],
+      "links": {
+        "Github": "https://github.com/saksham069/flutter-basic-ecommerce-app"
+      }
+    },
+    {
+      "title": "Tic Tac Toe (WebSockets)",
+      "description": "Multiplayer tic-tac-toe built with real-time communication using WebSockets and Node.js.",
+      "thumbnail": "/tic-tac-toe.png",
+      "tags": ["WebSockets", "Game Dev", "Real-time", "Node.js"],
+      "links": {
+        "Github": "https://github.com/saksham069/tic-tac-toe-sockets.io"
+      }
+    }
+  ]
+}

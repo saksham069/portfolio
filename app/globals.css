@@ -3,37 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --background: oklch(0.98 0.005 95);
-  --foreground: oklch(0.28 0.005 230);
+  --background: oklch(0.975 0.007 250); /* soft white with a hint of blue */
+  --foreground: oklch(0.25 0.01 250); /* clean text, cooler gray */
 
-  --primary: oklch(0.5 0.06 210);
-  --primary-foreground: oklch(0.98 0.005 95);
+  --primary: oklch(0.58 0.16 245); /* medium blue */
+  --primary-foreground: oklch(0.98 0.01 250); /* bright contrast text */
 
-  --muted: #f1f1ef;
-  --muted-foreground: #646464;
+  --muted: oklch(0.93 0.007 240); /* light gray with blue tone */
+  --muted-foreground: oklch(0.45 0.01 250); /* softer gray text */
 
-  --border: #dcdcdc;
-  --ring: #c6d3db;
+  --border: oklch(0.88 0.005 250);
+  --ring: oklch(0.7 0.05 250);
 
-  --accent: #e2e6e9;
-  --accent-foreground: #2f2f2f;
+  --accent: oklch(0.9 0.02 240); /* subtle accent for hovers */
+  --accent-foreground: oklch(0.25 0.01 250);
 }
 
 .dark {
-  --background: oklch(0.16 0.005 230);
-  --foreground: oklch(0.97 0.005 95);
+  --background: oklch(0.18 0.007 250); /* dark slate blue */
+  --foreground: oklch(0.98 0.01 250); /* near-white text */
 
-  --primary: oklch(0.72 0.07 210);
-  --primary-foreground: oklch(0.16 0.005 230);
+  --primary: oklch(0.72 0.16 245); /* brighter blue */
+  --primary-foreground: oklch(0.16 0.005 250); /* dark bg for contrast */
 
-  --muted: #1c1e1f;
-  --muted-foreground: #a3a3a3;
+  --muted: oklch(0.25 0.01 250);
+  --muted-foreground: oklch(0.72 0.01 250);
 
-  --border: #2a2d2f;
-  --ring: #3b4b53;
+  --border: oklch(0.3 0.005 250);
+  --ring: oklch(0.6 0.07 250);
 
-  --accent: #242729;
-  --accent-foreground: #e0e0e0;
+  --accent: oklch(0.32 0.02 240); /* darker accent bg */
+  --accent-foreground: oklch(0.95 0.01 250); /* soft near-white text */
 }
 
 @layer base {
@@ -41,10 +41,9 @@
     @apply bg-[var(--background)] text-[var(--foreground)];
   }
 
-  a {
-    @apply text-foreground transition-colors duration-150 hover:text-primary;
-  }
-
+nav a {
+  @apply text-foreground transition-colors duration-150 hover:text-primary;
+}
   .nav-link {
     @apply px-4 py-2 rounded-md font-medium text-sm transition-all;
   }
