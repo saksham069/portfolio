@@ -9,7 +9,7 @@
 "use client";
 
 import Link from "next/link";
-import { DownloadIcon } from "@radix-ui/react-icons";
+import { Share2Icon } from "@radix-ui/react-icons";
 import {
   SiJavascript,
   SiPython,
@@ -57,12 +57,10 @@ export default function HomePage() {
 
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           <a
-            href="/saksham-resume.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-2 border border-border text-foreground rounded-md ring-offset-background hover:ring-2 hover:ring-ring hover:ring-offset-0"
+            href="https://drive.google.com/drive/folders/1x5ItUwKmvL0fYWpjW9n-WNvcEwKuhVfD?usp=sharing" target="_blank" className="inline-flex items-center gap-2 px-6 py-2 border border-border text-foreground rounded-md ring-offset-background hover:ring-2 hover:ring-ring hover:ring-offset-0"
           >
-            <DownloadIcon />
-            Download Résumé
+            <Share2Icon />
+            View Résumé
           </a>
 
           <Link
