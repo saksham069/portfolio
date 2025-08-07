@@ -129,19 +129,6 @@ export default function AboutPage() {
           <li>Sometimes I dive into microcontroller projects...<br />just cuz making things beep and blink scratches this specific itch in my brain</li>
         </ul>
       </motion.div>
-
-
-      {/* Certifications - placeholder */}
-      <motion.div {...fadeIn} className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">
-          Certifications
-        </h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>Prompt Engineering - DeepLeaning.AI (2024)</li>
-          <li>Frontend Development - Udemy (2023)</li>
-          <li>Arduino + IoT Workshop - MRU (2022)</li>
-        </ul>
-      </motion.div>
     </section >
   );
 }
