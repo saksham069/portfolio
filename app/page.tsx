@@ -34,6 +34,7 @@ import {
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import projectsData from "@/data/projects.json";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const featuredProjects = projectsData["main"].slice(0, 3);
 
@@ -65,7 +66,7 @@ export default function HomePage() {
 
           <Link
             href="/contact"
-            className="px-6 py-2 bg-primary text-primary-foreground rounded-md ring-offset-background hover:ring-2 hover:ring-ring hover:ring-offset-0"
+            className="px-6 py-2 w-40 bg-primary text-primary-foreground rounded-md ring-offset-background hover:ring-2 hover:ring-ring hover:ring-offset-0"
           >
             Contact Me
           </Link>
@@ -145,44 +146,48 @@ export default function HomePage() {
       <hr className="w-full border-border" />
 
       {/* Projects Section */}
-      <motion.section
-        {...fadeIn}
-        className="w-full text-left"
-      >
+      <motion.section {...fadeIn} className="w-full text-left">
         <div className="flex items-center justify-center gap-2 mb-6">
-          <h2 className="text-xl font-semibold text-foreground">
-            Featured Projects
-          </h2>
-          <div className="invisible sm:visible relative group inline-block">
-            <div className="w-5 h-5 rounded-full border border-muted-foreground text-primary italic flex items-center justify-center text-sm font-semibold cursor-default">
-              i
-            </div>
-            <div className="absolute z-20 bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-[200px] px-3 py-2 text-xs text-foreground bg-background border border-border rounded-md opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md">
-              Click on any card and use arrow keys to scroll.
-            </div>
-          </div>
+          <h2 className="text-xl font-semibold text-foreground">Featured Projects</h2>
         </div>
 
-        <div className="relative">
+        <div className="relative group">
           {/* Left Fade */}
           <div className="pointer-events-none absolute -left-16 top-0 h-full w-28 z-10 bg-gradient-to-r from-background via-background to-transparent" />
 
           {/* Right Fade */}
           <div className="pointer-events-none absolute -right-16 top-0 h-full w-40 z-10 bg-gradient-to-l from-background via-background to-transparent" />
 
+          {/* Left Arrow Button */}
+          <button
+            onClick={() => {
+              document.getElementById('project-scroll')?.scrollBy({ left: -100, behavior: 'smooth' });
+            }}
+            className="hidden sm:visible text-2xl font-extrabold sm:flex items-center justify-center absolute left-2 top-1/2 z-20 h-10 w-10 rounded-full opacity-50 group-hover:opacity-100 transition-opacity bg-black dark:bg-white text-primary-foreground"
+          >
+            <BiLeftArrow/>
+          </button>
+
+          {/* Right Arrow Button */}
+          <button
+            onClick={() => {
+              document.getElementById('project-scroll')?.scrollBy({ left: 100, behavior: 'smooth' });
+            }}
+            className="hidden sm:visible text-2xl font-bold sm:flex items-center justify-center absolute right-2 top-1/2 z-20 h-10 w-10 rounded-full bg-black dark:bg-white text-primary-foreground opacity-50 group-hover:opacity-100 transition-opacity"
+          >
+            <BiRightArrow/>
+          </button>
 
           {/* Scrollable Container */}
           <div
+            id="project-scroll"
             className="flex gap-4 overflow-x-auto px-2 -mx-2 pb-1 scroll-smooth snap-x snap-mandatory hide-scrollbar"
             role="region"
             aria-label="Featured Projects"
             tabIndex={0}
           >
             {featuredProjects.map((project) => (
-              <div
-                key={project.title}
-                className="w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 snap-center"
-              >
+              <div key={project.title} className="w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 snap-center">
                 <ProjectCard {...project} />
               </div>
             ))}
@@ -195,14 +200,11 @@ export default function HomePage() {
               <div className="text-primary text-lg font-medium transition-transform group-hover:translate-x-1">
                 View All Projects →
               </div>
-              <div className="text-sm text-muted-foreground">
-                Browse all work
-              </div>
+              <div className="text-sm text-muted-foreground">Browse all work</div>
             </Link>
           </div>
         </div>
       </motion.section>
-
     </section>
   );
 }

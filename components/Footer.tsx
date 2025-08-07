@@ -29,7 +29,7 @@ export default function Footer() {
               <FaGithub className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/saksham-arora"
+              href="https://www.linkedin.com/in/sakshamarorax02/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition"

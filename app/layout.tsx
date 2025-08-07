@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Saksham Arora | Portfolio",
   description: "My personal portfolio site",
   icons: {
-    icon: '/portfolio.png',
+    icon: '/favicon.png',
   },
 };
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/portfolio.png" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
